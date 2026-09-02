@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers 정적 자산 배포 (*.workers.dev)
+  // 백엔드 없이 목 데이터로 도는 시연본만 올린다.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "skala",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    // SPA — /hr/screening 같은 경로를 새로고침해도 index.html 로 돌려준다
+    "not_found_handling": "single-page-application"
+  }
+}

@@ -37,3 +37,12 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
+
+# 로컬 환경변수 — OpenAI 키 등 비밀값이 들어간다. .env.example 만 공유한다.
+.env
+.env.*
+!.env.example
+!.env.production
+
+# Cloudflare Workers 빌드 임시 파일
+.wrangler

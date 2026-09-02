@@ -1,0 +1,43 @@
+/*
+ * Design tokens — "Editorial Compliance"
+ * 컬러는 SK CI(주요 2색 + 보조 색상 규정)에서만 가져오고, 무채색은 잉크 3단계로 제한한다.
+ */
+:root {
+  /* Surfaces */
+  --paper: #fafaf8;
+  --surface: #ffffff;
+  --surface-muted: #f3f3f0;
+
+  /* Ink */
+  --ink-900: #141414;
+  --ink-600: #5f5f5f;
+  --ink-400: #9a9a9a;
+
+  /* Hairlines */
+  --line: #e6e6e2;
+  --line-strong: #cfcfc9;
+
+  /* SK CI */
+  --sk-red: #ea002c;
+  --sk-red-text: #c8001e;
+  --sk-red-tint: #fdf0f2;
+  --sk-orange: #f47725;
+  --sk-teal: #009a93;
+  --sk-teal-tint: #eef6f5;
+
+  /* Dark (entry screens) */
+  --dark: #141414;
+
+  /* Type */
+  --font-sans: 'IBM Plex Sans KR', 'IBM Plex Sans', 'Malgun Gothic', system-ui, sans-serif;
+  --font-num: 'IBM Plex Sans', 'IBM Plex Sans KR', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Layout */
+  --nav-width: 208px;
+  --content-pad-y: 40px;
+  --content-pad-x: 48px;
+  --content-pad-bottom: 88px;
+  --section-gap: 32px;
+  --radius: 2px;
+}

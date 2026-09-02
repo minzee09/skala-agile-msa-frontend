@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink-900);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--ink-900);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+a:hover {
+  color: var(--sk-red);
+  border-color: var(--sk-red);
+}
+
+/* 숫자는 항상 tabular */
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+}
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* 타이포 스케일 */
+.t-h1 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+.t-h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.t-label {
+  font-size: 11px;
+  color: var(--ink-400);
+  letter-spacing: 0.04em;
+}
+.t-small {
+  font-size: 12px;
+  color: var(--ink-400);
+  letter-spacing: -0.005em;
+}
+.t-muted {
+  color: var(--ink-600);
+}
+.t-red {
+  color: var(--sk-red-text);
+}
+
+/* 섹션 등장 모션 (시연용) */
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.anim-up {
+  animation: up 0.6s ease-out both;
+}
+.anim-grow {
+  transform-origin: left;
+  animation: grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both 0.5s;
+}
+
+/* Vuetify 보정 — 캡슐·그림자·머티리얼 라운드 제거 */
+.v-application {
+  background: var(--paper) !important;
+  font-family: var(--font-sans) !important;
+}
+.v-btn {
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
+}
+.v-btn--variant-flat.bg-primary {
+  color: #fff !important;
+}
+.v-field--variant-underlined .v-field__outline::before {
+  border-color: var(--line-strong) !important;
+}
+.v-field--variant-underlined.v-field--focused .v-field__outline::after {
+  border-color: var(--ink-900) !important;
+}
+.v-field__input {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+.v-label {
+  font-size: 11px !important;
+  letter-spacing: 0.04em !important;
+  color: var(--ink-400) !important;
+  opacity: 1 !important;
+}
+.v-chip {
+  border-radius: var(--radius) !important;
+}
+.v-overlay__content .v-card {
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
+  border: 1px solid var(--line);
+}
+
+/* 인쇄 — 이수증만 종이에 남긴다 */
+@media print {
+  body,
+  .v-application {
+    background: #fff !important;
+  }
+  .layout {
+    padding-left: 0 !important;
+  }
+  .nav,
+  .no-print,
+  .page-header__actions {
+    display: none !important;
+  }
+  .content {
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  .anim-up,
+  .anim-grow {
+    animation: none !important;
+  }
+  .mat {
+    background: #fff !important;
+    padding: 0 !important;
+  }
+  .paper {
+    border: 0 !important;
+  }
+}
+
+/* 인쇄 시에는 모션 상태와 무관하게 문서가 온전히 나와야 한다 */
+@media print {
+  .paper,
+  .paper * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
